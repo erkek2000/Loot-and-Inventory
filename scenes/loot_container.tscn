@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://xvfv0eqrok3w"]
 
-[ext_resource type="Script" uid="uid://cfpcwplej6dhf" path="res://scripts/loot_container.gd" id="1_24i0d"]
+[ext_resource type="Script" uid="uid://cfpcwplej6dhf" path="res://scripts/looting_scene_main.gd" id="1_24i0d"]
+[ext_resource type="Script" uid="uid://dwfgl81ig2yhm" path="res://scripts/loot_panel.gd" id="2_6yf5w"]
+[ext_resource type="Script" uid="uid://cxrjtw8geu7uw" path="res://scripts/item_info_panel.gd" id="2_rmns8"]
+[ext_resource type="Script" uid="uid://biubneiy13j2l" path="res://scripts/loot_generator.gd" id="3_h256f"]
 
-[node name="LootContainer" type="Control" unique_id=1421542343]
+[node name="LootingSceneMain" type="Control" unique_id=1421542343]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -96,7 +99,11 @@ anchor_left = 0.0034722222
 anchor_top = 0.0046296297
 anchor_right = 0.21961805
 anchor_bottom = 0.23148148
+script = ExtResource("2_6yf5w")
 metadata/_edit_use_anchors_ = true
+
+[node name="LootGenerator" type="Node" parent="LootPanel" unique_id=1257391532]
+script = ExtResource("3_h256f")
 
 [node name="LootButton" type="Button" parent="LootPanel" unique_id=1358333996]
 layout_mode = 1
@@ -151,6 +158,7 @@ anchor_left = 0.2204861
 anchor_top = 0.0061728396
 anchor_right = 0.5303819
 anchor_bottom = 0.7330247
+script = ExtResource("2_rmns8")
 metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ItemInfoPanel" unique_id=505764079]
