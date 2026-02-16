@@ -76,3 +76,17 @@ func dictionary_to_weapon(data: Dictionary) -> Weapon:
 	w.rarity = data["rarity_tier"]
 	w.is_material = data["is_material"]
 	return w
+
+func dictionary_to_armor(data: Dictionary) -> Armor:
+	var a := Armor.new()
+	a.name = data["name"]
+	a.defence = data["defence"]
+	a.move_speed = data["move_speed"]
+	a.knockback_resistance = data["knockback_resistance"]
+	a.aggro = data["aggro"]
+	a.is_uniform = data["is_uniform"]
+	a.uniform_faction = data["uniform_faction"]
+	a.lore = data["lore"]
+	a.rarity = data["rarity_tier"]
+	a.is_material = data["is_material"]
+	return a
