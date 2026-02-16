@@ -11,5 +11,5 @@ func _process(delta: float) -> void:
 	pass
 
 
-func generate_item() -> Resource:
+func generate_item(container_size: int, luck: float) -> Resource:
 	return 
