@@ -1,25 +1,21 @@
 extends Node
 
 
-const ITEMS = preload("res://items/items.json")
 var items_data := {}
 var weapons := []
 var armors := []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# should give:
-	#	items_data["weapons"]
-	#	items_data["armors"]
 	items_data = load_items_json("res://items/items.json")
 	weapons = items_data["weapons"]
 	armors = items_data["armors"]
-	var loot = get_loot(weapons, 3)
-	print(loot)
-
-
-func generate_item(container_size: int, luck: float) -> Resource:
-	return 
+	
+	
+	var loot_dict = get_loot(weapons, 3)
+	print(loot_dict)
+	var weapon_instance = dictionary_to_weapon(loot_dict)
+	
 
 
 func load_items_json(path: String) -> Dictionary:
@@ -65,3 +61,18 @@ func get_weighted_random_item(items: Array) -> Dictionary:
 			return item
 	
 	return items.back()
+
+
+func dictionary_to_weapon(data: Dictionary) -> Weapon:
+	var w := Weapon.new()
+	w.name = data["name"]
+	w.damage_min = data["damage_min"]
+	w.damage_max = data["damage_max"]
+	w.speed = data["speed"]
+	w.crit_chance = data["crit_chance"]
+	w.crit_damage = data["crit_damage"]
+	w.knockback = data["knockback"]
+	w.lore = data["lore"]
+	w.rarity = data["rarity_tier"]
+	w.is_material = data["is_material"]
+	return w
