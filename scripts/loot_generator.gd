@@ -2,26 +2,43 @@ extends Node
 
 
 var items_data := {}
-var weapons := []
-var armors := []
+var loot_data : Array[Resource]= []
+var weapons : Array[Weapon]= []
+var armors : Array[Armor]= []
+
+const ARMOR_ICON = preload("uid://cloewy64jwg1k")
+const SWORD_ICON = preload("uid://bcsgdtm0apw32")
+
+@onready var container_panel: Panel = %ContainerPanel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	items_data = load_items_json("res://items/items.json")
-	weapons = items_data["weapons"]
-	armors = items_data["armors"]
-	
-	
-	var loot_dict = get_loot(weapons, 3)
-	print(loot_dict)
-	var weapon_instance = dictionary_to_weapon(loot_dict)
+	# Convert JSON to real resources immediately
+	for weapon_dict in items_data["weapons"]:
+		weapons.append(dictionary_to_weapon(weapon_dict))
+	for armor_dict in items_data["armors"]:
+		armors.append(dictionary_to_armor(armor_dict))
+
+	generate_loot()
+
+	#var loot_dict = get_loot(weapons, 3)
+	#print(loot_dict)
+	#var weapon_instance = dictionary_to_weapon(loot_dict)
 
 
-func get_random_weapon() -> Dictionary:
+func generate_loot() -> Array[Resource]:
+	loot_data.clear()
+	loot_data.append(get_random_weapon())
+	loot_data.append(get_random_armor())
+	return loot_data
+
+
+func get_random_weapon() -> Weapon:
 	return weapons.pick_random()
 
 
-func get_random_armor() -> Dictionary:
+func get_random_armor() -> Armor:
 	return armors.pick_random()
 
 

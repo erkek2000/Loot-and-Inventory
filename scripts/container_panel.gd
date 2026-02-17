@@ -6,17 +6,21 @@ extends Panel
 
 @onready var grid_container: GridContainer = $GridContainer
 @onready var item_info_panel: Panel = %ItemInfoPanel
+@onready var loot_generator: Node = %LootGenerator
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	generate_loot()
+	get_loot()
 
 
-func generate_loot(item_count: int = 2):
+func get_loot(item_count: int = 2):
 	# Clear handmade placeholder buttons
 	clear_children()
-	
+	Item_List.clear()
+	for item in loot_generator.loot_data:
+		Item_List.append(item)
+
 	for item in Item_List:
 		var item_btn := Button.new()
 		#item_btn.text = "Item1"
@@ -42,7 +46,9 @@ func clear_children():
 
 #region SIGNALS
 func _on_loot_button_pressed() -> void:
-	generate_loot()
+	loot_generator.generate_loot()
+	get_loot()
+
 
 
 func _item_on_mouse_entered() -> void:

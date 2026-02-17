@@ -20,6 +20,6 @@ class_name Weapon
 @export var knockback: float = 1
 @export var lore: String
 ## 
-@export var rarity: float = 1
+@export var rarity: int = 1
 ## Check if this item is in a recipe.
 @export var is_material: bool

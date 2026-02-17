@@ -20,5 +20,6 @@ class_name Armor
 @export var uniform_faction: String
 
 @export var lore: String
+@export var rarity: int = 1
 ## Check if this item is in a recipe.
 @export var is_material: bool
