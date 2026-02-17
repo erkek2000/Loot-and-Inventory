@@ -15,7 +15,14 @@ func _ready() -> void:
 	var loot_dict = get_loot(weapons, 3)
 	print(loot_dict)
 	var weapon_instance = dictionary_to_weapon(loot_dict)
-	
+
+
+func get_random_weapon() -> Dictionary:
+	return weapons.pick_random()
+
+
+func get_random_armor() -> Dictionary:
+	return armors.pick_random()
 
 
 func load_items_json(path: String) -> Dictionary:
