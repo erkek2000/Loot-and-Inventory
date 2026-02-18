@@ -7,18 +7,18 @@ extends Panel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# Very important to make this panel and ALL its children mouse ignoring.
+	# Otherwise cursor enters the panel which would mean it will emit button
+	# exited signal.
 	self.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	self.visible = false
-	clear_labels()	
-	#var item_label = new Label
-	#item_label.text = 
-
+	clear_labels()
+	
 
 func _process(delta: float) -> void:
 	var offset := Vector2(0, 0)
 	if visible:
 		global_position = get_viewport().get_mouse_position() + offset
-
 
 func set_labels(item: Resource) -> void:
 	clear_labels()
@@ -56,6 +56,8 @@ func set_labels(item: Resource) -> void:
 	if item.lore != "":
 		add_label("")
 		add_label(item.lore)
+	await get_tree().process_frame
+	size.y = v_box_container.get_combined_minimum_size().y
 
 
 func add_label(text: String) -> void:

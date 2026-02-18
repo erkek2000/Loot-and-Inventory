@@ -156,7 +156,14 @@ text = "Item 6"
 [node name="ItemInfoPanel" type="Panel" parent="." unique_id=2011133695]
 unique_name_in_owner = true
 self_modulate = Color(1, 1, 1, 0.54901963)
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22222222
+anchor_top = 0.0015432099
+anchor_right = 0.4470486
+anchor_bottom = 0.41666666
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("2_rmns8")
 metadata/_edit_use_anchors_ = true
 
