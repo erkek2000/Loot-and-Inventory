@@ -4,6 +4,7 @@ extends Panel
 ## Lists the items the loot container holds.
 @export var Item_List: Array[Resource] = []
 
+@onready var looting_scene_main: Control = $".."
 @onready var grid_container: GridContainer = $GridContainer
 @onready var item_info_panel: Panel = %ItemInfoPanel
 @onready var loot_generator: Node = %LootGenerator
@@ -38,7 +39,7 @@ func get_loot(item_count: int = 2):
 
 		# ---- RARITY STYLE ----
 		var style := StyleBoxFlat.new()
-		style.bg_color = get_rarity_color(item.rarity)
+		style.bg_color = looting_scene_main.get_rarity_color(item.rarity)
 		# Rounded corners
 		style.set_corner_radius_all(6)
 		# Border
@@ -62,16 +63,6 @@ func clear_children():
 	# Clear handmade preview buttons in loot panel.
 	for child in grid_container.get_children():
 		child.queue_free()
-
-
-func get_rarity_color(rarity: int) -> Color:
-	match rarity:
-		0: return Color(0.4, 0.4, 0.4)      # Common (gray)
-		1: return Color(0.2, 0.8, 0.2)      # Uncommon (green)
-		2: return Color(0.2, 0.4, 1.0)      # Rare (blue)
-		3: return Color(0.6, 0.2, 1.0)      # Epic (purple)
-		4: return Color(1.0, 0.5, 0.0)      # Legendary (orange)
-		_: return Color.WHITE
 
 
 #region SIGNALS
