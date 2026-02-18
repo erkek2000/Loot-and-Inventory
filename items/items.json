@@ -9,7 +9,7 @@
 			"crit_damage": 2.5,
 			"knockback": 2.0,
 			"lore": "The legendary sword of a forgotten king.",
-			"rarity_tier": 3,
+			"rarity_tier": 5,
 			"spawn_weight": 1,
 			"is_material": false
 		},
@@ -76,7 +76,7 @@
 			"is_uniform": false,
 			"uniform_faction": "",
 			"lore": "Worn by assassins.",
-			"rarity_tier": 4,
+			"rarity_tier": 3,
 			"spawn_weight": 5,
 			"is_material": false
 		},

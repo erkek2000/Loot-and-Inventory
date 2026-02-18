@@ -6,9 +6,9 @@ class_name Weapon
 #@export var icon: Texture2D
 
 ## Minimum Damage Value
-@export var damage_min: float = 0
+@export var damage_min: int = 0
 ## Maximum Damage Value
-@export var damage_max: float = 0
+@export var damage_max: int = 0
 
 ## Weapon Attack Speed
 @export var speed: float = 1

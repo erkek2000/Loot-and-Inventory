@@ -6,7 +6,7 @@ class_name Armor
 #@export var icon: Texture2D
 
 ## Damage Reduction
-@export var defence: float
+@export var defence: int = 0
 
 ## Wearing armor may slow the player. 1 is unaffected speed.
 @export var move_speed: float = 1
@@ -16,7 +16,7 @@ class_name Armor
 @export var aggro: float = 1
 
 ## Armor can be of a faction and can be used as a disguise
-@export var is_uniform: bool
+@export var is_uniform: bool = false
 @export var uniform_faction: String
 
 @export var lore: String
