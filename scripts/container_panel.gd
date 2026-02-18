@@ -39,7 +39,6 @@ func get_loot(item_count: int = 2):
 		grid_container.add_child(item_btn)
 
 func clear_children():
-	var grid_container = $GridContainer
 	# Clear handmade preview buttons in loot panel.
 	for child in grid_container.get_children():
 		child.queue_free()

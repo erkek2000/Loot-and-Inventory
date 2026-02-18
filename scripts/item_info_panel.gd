@@ -21,7 +21,6 @@ func _physics_process(delta: float) -> void:
 #func add_label
 
 func clear_children():
-	var v_box_container = $GridContainer
 	# Clear handmade preview buttons in loot panel.
 	for child in v_box_container.get_children():
 		child.queue_free()
