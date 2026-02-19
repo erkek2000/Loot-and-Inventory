@@ -37,7 +37,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 23.0
 grow_horizontal = 2
-text = "INVENTORY"
+text = "UI_INVENTORY"
 horizontal_alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="InventoryPanel" unique_id=1848687051]
@@ -152,6 +152,13 @@ text = "Item 5"
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Item 6"
+
+[node name="HSlider" type="HSlider" parent="ContainerPanel" unique_id=95585955]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 88.0
+offset_right = 242.0
+offset_bottom = 111.0
 
 [node name="ItemInfoPanel" type="Panel" parent="." unique_id=2011133695]
 unique_name_in_owner = true

@@ -30,6 +30,10 @@ folder_colors={
 "res://scripts/": "red"
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://translation/translations.en.translation", "res://translation/translations.tr.translation")
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

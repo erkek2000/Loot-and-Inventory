@@ -39,23 +39,24 @@ func set_labels(item: Resource) -> void:
 	
 	# Weapon stats
 	if item is Weapon:
-		add_label("Damage   %s - %s" % [item.damage_min, item.damage_max])
-		add_label("Speed   %s" % item.speed)
-		add_label("Crit Chance   %s%%" % int(item.crit_chance * 100))
-		add_label("Crit Damage   x%s" % item.crit_damage)
-		add_label("Knockback   %s" % item.knockback)
+		add_label(tr("STAT_DAMAGE") % [item.damage_min, item.damage_max])
+		add_label(tr("STAT_SPEED") % item.speed)
+		add_label(tr("STAT_CRIT_CHANCE") % int(item.crit_chance * 100))
+		add_label(tr("STAT_CRIT_DAMAGE") % item.crit_damage)
+		add_label(tr("STAT_KNOCKBACK") % item.knockback)
 	
 	# Armor stats
 	elif item is Armor:
-		add_label("Defence   %s" % item.defence)
-		add_label("Move Speed   %s" % item.move_speed)
-		add_label("Knockback Resistance   %s" % item.knockback_resistance)
-		add_label("Aggro   %s" % item.aggro)
+		add_label(tr("STAT_DEFENCE") % item.defence)
+		add_label(tr("STAT_MOVE_SPEED") % item.move_speed)
+		add_label(tr("STAT_KB_RESIST") % item.knockback_resistance)
+		add_label(tr("STAT_AGGRO") % item.aggro)
 	
 	# Lore (shared)
 	if item.lore != "":
 		add_label("")
-		add_label(item.lore)
+		add_label(tr(item.lore))  # assuming lore is already a key
+	
 	await get_tree().process_frame
 	size.y = v_box_container.get_combined_minimum_size().y
 

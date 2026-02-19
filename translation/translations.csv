@@ -1,0 +1,12 @@
+keys,en,tr
+,,
+STAT_DAMAGE,Damage   %d - %d,Hasar   %d - %d
+STAT_SPEED,Speed   %s,Hız   %s
+STAT_CRIT_CHANCE,Crit Chance   %d%%,Kritik Şans   %d%%
+STAT_CRIT_DAMAGE,Crit Damage   x%s,Kritik Hasar   x%s
+STAT_KNOCKBACK,Knockback   %s,Geri İtme   %s
+STAT_DEFENCE,Defence   %s,Savunma   %s
+STAT_MOVE_SPEED,Move Speed   %s,Hareket Hızı   %s
+STAT_KB_RESIST,Knockback Resistance   %s,İtilme Direnci   %s
+STAT_AGGRO,Aggro   %s,Tepki   %s
+UI_INVENTORY,INVENTORY,ENVANTER
