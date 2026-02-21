@@ -103,15 +103,19 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0034722222
 anchor_top = 0.0046296297
-anchor_right = 0.21961805
-anchor_bottom = 0.23148148
+anchor_right = 0.34884724
+anchor_bottom = 0.3530494
+offset_left = -4.0
+offset_top = -3.0
+offset_right = -81.87201
+offset_bottom = 91.22398
 script = ExtResource("2_6yf5w")
 metadata/_edit_use_anchors_ = true
 
 [node name="LootButton" type="Button" parent="ContainerPanel" unique_id=1358333996]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.75510204
+anchor_top = 0.86283183
 anchor_right = 1.0
 anchor_bottom = 1.0
 text = "Loot Container"
@@ -119,9 +123,11 @@ metadata/_edit_use_anchors_ = true
 
 [node name="GridContainer" type="GridContainer" parent="ContainerPanel" unique_id=881887296]
 layout_mode = 0
-offset_right = 249.0
-offset_bottom = 111.0
-columns = 4
+offset_right = 398.0
+offset_bottom = 195.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 5
 
 [node name="Item1" type="Button" parent="ContainerPanel/GridContainer" unique_id=78867558]
 layout_mode = 2
@@ -153,22 +159,15 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Item 6"
 
-[node name="HSlider" type="HSlider" parent="ContainerPanel" unique_id=95585955]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 88.0
-offset_right = 242.0
-offset_bottom = 111.0
-
 [node name="ItemInfoPanel" type="Panel" parent="." unique_id=2011133695]
 unique_name_in_owner = true
 self_modulate = Color(1, 1, 1, 0.54901963)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.22222222
-anchor_top = 0.0015432099
-anchor_right = 0.4470486
-anchor_bottom = 0.41666666
+anchor_left = 0.34895834
+anchor_top = 0.0046296297
+anchor_right = 0.5737847
+anchor_bottom = 0.41975307
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_rmns8")
