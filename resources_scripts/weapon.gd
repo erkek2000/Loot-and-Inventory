@@ -21,5 +21,6 @@ class_name Weapon
 @export var lore: String
 ## 
 @export var rarity: int = 1
+@export var spawn_weight: int = 1
 ## Check if this item is in a recipe.
-@export var is_material: bool
+@export var is_material: bool = false
