@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dwfgl81ig2yhm" path="res://scripts/container_panel.gd" id="2_6yf5w"]
 [ext_resource type="Script" uid="uid://cxrjtw8geu7uw" path="res://scripts/item_info_panel.gd" id="2_rmns8"]
 [ext_resource type="Script" uid="uid://biubneiy13j2l" path="res://scripts/loot_generator.gd" id="3_h256f"]
+[ext_resource type="Script" uid="uid://bb1724ttw4eb2" path="res://scripts/inventory_panel.gd" id="3_u5met"]
 
 [node name="LootingSceneMain" type="Control" unique_id=1421542343]
 layout_mode = 3
@@ -29,6 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_u5met")
 metadata/_edit_use_anchors_ = true
 
 [node name="InventoryLabel" type="Label" parent="InventoryPanel" unique_id=191806676]
@@ -45,7 +47,7 @@ layout_mode = 0
 offset_top = 40.0
 offset_right = 474.0
 offset_bottom = 243.0
-columns = 8
+columns = 7
 
 [node name="Slot1" type="Button" parent="InventoryPanel/GridContainer" unique_id=719542818]
 layout_mode = 2
